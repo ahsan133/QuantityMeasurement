@@ -208,5 +208,14 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(UnitConverter.GALLON, 1.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
+
+        [TestMethod]
+        public void Given1LitterAnd1000milliLiter_WhenComparedQuantity_ThenShouldReturnEqual()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.LITRE, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.MILILITRE, 1000.0);
+            Assert.AreEqual(lengthTwo, lengthOne);
+        }
+
     }
 }
