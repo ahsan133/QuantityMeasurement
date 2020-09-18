@@ -54,5 +54,13 @@ namespace QuantityMeasurementTest
             LengthCompare LengthCompareTwo = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
             Assert.AreEqual(LengthOne, LengthCompareTwo);
         }
+
+        [TestMethod]
+        public void GivenZeroLengthCompareAndNullLengthCompare_WhenCompareQuantity_ThenShouldReturnNotEquals()
+        {
+            LengthCompare LengthCompareOne = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
+            LengthCompare LengthCompareTwo = null;
+            Assert.AreNotEqual(LengthCompareOne, LengthCompareTwo);
+        }
     }
 }
