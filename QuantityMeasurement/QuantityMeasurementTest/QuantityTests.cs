@@ -122,5 +122,14 @@ namespace QuantityMeasurementTest
             bool compareCheck = lengthTwo.Compare(lengthOne);
             Assert.IsFalse(compareCheck);
         }
+
+        [TestMethod]
+        public void GivenOneInchAndOneYard_WhenCompareQuantity_ThenShouldReturnFalse()
+        {
+            LengthCompare lengthOne = new LengthCompare(LengthCompare.Unit.INCH, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(LengthCompare.Unit.YARD, 1.0);
+            bool compareCheck = lengthTwo.Compare(lengthOne);
+            Assert.IsFalse(compareCheck);
+        }
     }
 }
