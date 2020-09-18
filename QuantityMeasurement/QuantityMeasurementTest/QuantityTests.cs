@@ -217,5 +217,14 @@ namespace QuantityMeasurementTest
             Assert.AreEqual(lengthTwo, lengthOne);
         }
 
+        [TestMethod]
+        public void Given1GallontAndLitter_WhenAdded_ThenShouldReturnEqualsWithvalue()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.GALLON, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.LITRE, 3.78);
+            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.LITRE, 7.56);
+            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
     }
 }
