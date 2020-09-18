@@ -162,11 +162,21 @@ namespace QuantityMeasurementTest
         }
 
         [TestMethod]
-        public void Given2InchAnd2Inch_ThenAddition_shouldReturnEquals()
+        public void Given2InchAnd2Inch_WhenAdded_ThenshouldReturnEquals()
         {
             LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 2.0);
             LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 2.0);
             LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 4.0);
+            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
+
+        [TestMethod]
+        public void Given2FeetAnd2Inch_WhenAdded_ThenShouldReturnEquals()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 2.0);
+            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 14.0);
             LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
