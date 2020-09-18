@@ -22,7 +22,7 @@ namespace QuantityMeasurement
             if (obj == null || !this.GetType().Equals(obj.GetType()))
                 return false;
             LengthCompare length = (LengthCompare)obj;
-            return value.CompareTo(length.value) == 0 & unit == length.unit;
+            return Double.Equals(length.unit.ConvertedValue(length.value), this.unit.ConvertedValue(this.value));
         }
     }
 }

@@ -152,5 +152,13 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
+
+        [TestMethod]
+        public void GivenTwoInchAndFiveCentimeter_WhenCompareQuantity_ThenShouldReturnTrue()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 2.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.CENTIMETER, 5.0);
+            Assert.IsTrue(lengthOne.Equals(lengthTwo));
+        }
     }
 }
