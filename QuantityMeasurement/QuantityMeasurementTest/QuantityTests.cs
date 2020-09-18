@@ -180,5 +180,15 @@ namespace QuantityMeasurementTest
             LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
+
+        [TestMethod]
+        public void Given1FeetAnd1Feer_WhenAdded_ThenShouldReturnEquals()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.FEET, 1.0);
+            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 24.0);
+            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
     }
 }
