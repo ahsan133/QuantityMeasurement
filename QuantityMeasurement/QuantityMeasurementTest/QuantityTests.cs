@@ -104,5 +104,7 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(LengthCompare.Unit.INCH, 0.3);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
+
+
     }
 }
