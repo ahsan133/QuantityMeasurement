@@ -236,5 +236,13 @@ namespace QuantityMeasurementTest
             LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
+
+        [TestMethod]
+        public void Given1KilogramAnd1000Gram_WhenCompared_ThenShouldReturnEqualsWithvalue()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.KILOGRAM, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.GRAM, 1000.0);
+            Assert.AreEqual(lengthOne, lengthTwo);
+        }
     }
 }
