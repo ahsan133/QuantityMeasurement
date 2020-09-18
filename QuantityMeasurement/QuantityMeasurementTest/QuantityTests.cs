@@ -149,5 +149,14 @@ namespace QuantityMeasurementTest
             bool compareCheck = lengthOne.Compare(lengthTwo);
             Assert.IsFalse(compareCheck);
         }
+
+        [TestMethod]
+        public void GivenOneYardAndThreeFeet_WhenCompareQuantity_ThenShouldReturnEquals()
+        {
+            LengthCompare lengthOne = new LengthCompare(LengthCompare.Unit.FEET, 3.0);
+            LengthCompare lengthTwo = new LengthCompare(LengthCompare.Unit.YARD, 1.0);
+            bool compareCheck = lengthTwo.Compare(lengthOne);
+            Assert.IsTrue(compareCheck);
+        }
     }
 }
