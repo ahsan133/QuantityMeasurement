@@ -252,5 +252,15 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(UnitConverter.KILOGRAM, 1000.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
+
+        [TestMethod]
+        public void Given1TonneAnd1000Gram_WhenAddition_ThenShouldReturnEqualsWithvalue10001Kilogram()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.TONNE, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.GRAM, 1000.0);
+            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.KILOGRAM, 1001);
+            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
     }
 }
