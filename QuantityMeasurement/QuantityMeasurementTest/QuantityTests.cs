@@ -226,5 +226,15 @@ namespace QuantityMeasurementTest
             LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
+
+        [TestMethod]
+        public void Given1LitterAnd1000MilliLiter_WhenAdded_ThenShouldReturnEqualsWithvalue2Litter()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.LITRE, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.MILILITRE, 1000.0);
+            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.LITRE, 2);
+            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
     }
 }
