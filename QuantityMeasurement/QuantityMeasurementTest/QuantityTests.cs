@@ -71,5 +71,14 @@ namespace QuantityMeasurementTest
             bool toReturn = System.Object.ReferenceEquals(LengthCompareOne, LengthCompareTwo);
             Assert.IsFalse(toReturn);
         }
+
+        [TestMethod]
+        public void GivenTwoObjectsForLengthCompare_WhenCheckedReference_ThenShouldReturnTrue()
+        {
+            LengthCompare LengthCompareOne = new LengthCompare(LengthCompare.Unit.INCH, 0.1);
+            LengthCompare LengthCompareTwo = LengthCompareOne;
+            bool toReturn = System.Object.ReferenceEquals(LengthCompareOne, LengthCompareTwo);
+            Assert.IsTrue(toReturn);
+        }
     }
 }
