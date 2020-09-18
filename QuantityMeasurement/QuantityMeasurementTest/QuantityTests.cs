@@ -38,5 +38,13 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(LengthCompare.Unit.FEET, 2.0);
             Assert.AreEqual(lengthOne.GetType(), lengthTwo.GetType());
         }
+
+        [TestMethod]
+        public void GivenZeroFeetAndThreeFeet_WhenCompareQuantity_ThenShouldReturnNotEquals()
+        {
+            LengthCompare lengthOne = new LengthCompare(LengthCompare.Unit.FEET, 0.0);
+            LengthCompare lengthTwo = new LengthCompare(LengthCompare.Unit.FEET, 5.0);
+            Assert.AreNotEqual(lengthOne, lengthTwo);
+        }
     }
 }
