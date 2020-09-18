@@ -15,6 +15,11 @@ namespace QuantityMeasurement
             this.value = value;
         }
 
+        public LengthCompare AddLength(LengthCompare that)
+        {
+            return new LengthCompare(UnitConverter.INCH, this.unit.ConvertedValue(this.value) + that.unit.ConvertedValue(that.value));
+        }
+
         public override bool Equals(object obj)
         {
             if (this == obj)
