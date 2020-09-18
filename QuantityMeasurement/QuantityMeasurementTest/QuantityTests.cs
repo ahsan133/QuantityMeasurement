@@ -9,24 +9,24 @@ namespace QuantityMeasurementTest
         [TestMethod]
         public void GivenZeroFeetToZeroFeet_WhenComparedQuantity_ThenShouldReturnEqual()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 0.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.FEET, 0.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 0.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.FEET, 0.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void GivenZeroFeetToNull_WhenComparedQuantity_ThenShouldReturnNotEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 0.0);
-            LengthCompare lengthTwo = null;
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 0.0);
+            QuantityCompare lengthTwo = null;
             Assert.AreNotEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void GivenTwoObjects_WhenCheckReference_ThenShouldReturnFalse()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 0.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.FEET, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 0.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.FEET, 1.0);
             bool toReturn = ReferenceEquals(lengthOne, lengthTwo);
             Assert.IsFalse(toReturn);
         }
@@ -34,40 +34,40 @@ namespace QuantityMeasurementTest
         [TestMethod]
         public void GivenTwoObjectWithDifferentvale_Whencheckedtype_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 0.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.FEET, 2.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 0.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.FEET, 2.0);
             Assert.AreEqual(lengthOne.GetType(), lengthTwo.GetType());
         }
 
         [TestMethod]
         public void GivenZeroFeetAndFiveFeet_WhenCompareQuantity_ThenShouldReturnNotEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 0.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.FEET, 5.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 0.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.FEET, 5.0);
             Assert.AreNotEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void GivenZeroLengthCompareAndZeroLengthCompare_WhenComparedQuantity_ThenShouldReturnEquals()
         {
-            LengthCompare LengthOne = new LengthCompare(UnitConverter.INCH, 0.0);
-            LengthCompare LengthCompareTwo = new LengthCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare LengthOne = new QuantityCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare LengthCompareTwo = new QuantityCompare(UnitConverter.INCH, 0.0);
             Assert.AreEqual(LengthOne, LengthCompareTwo);
         }
 
         [TestMethod]
         public void GivenZeroLengthCompareAndNullLengthCompare_WhenComparedQuantity_ThenShouldReturnNotEquals()
         {
-            LengthCompare LengthCompareOne = new LengthCompare(UnitConverter.INCH, 0.0);
-            LengthCompare LengthCompareTwo = null;
+            QuantityCompare LengthCompareOne = new QuantityCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare LengthCompareTwo = null;
             Assert.AreNotEqual(LengthCompareOne, LengthCompareTwo);
         }
 
         [TestMethod]
         public void GivenTwoObjectsForLengthCompare_WhenCheckedReference_ThenShouldReturnFalse()
         {
-            LengthCompare LengthCompareOne = new LengthCompare(UnitConverter.INCH, 0.0);
-            LengthCompare LengthCompareTwo = new LengthCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare LengthCompareOne = new QuantityCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare LengthCompareTwo = new QuantityCompare(UnitConverter.INCH, 0.0);
             bool toReturn = ReferenceEquals(LengthCompareOne, LengthCompareTwo);
             Assert.IsFalse(toReturn);
         }
@@ -75,8 +75,8 @@ namespace QuantityMeasurementTest
         [TestMethod]
         public void GivenTwoObjectsForLengthCompare_WhenCheckedReference_ThenShouldReturnTrue()
         {
-            LengthCompare LengthCompareOne = new LengthCompare(UnitConverter.INCH, 0.1);
-            LengthCompare LengthCompareTwo = LengthCompareOne;
+            QuantityCompare LengthCompareOne = new QuantityCompare(UnitConverter.INCH, 0.1);
+            QuantityCompare LengthCompareTwo = LengthCompareOne;
             bool toReturn = ReferenceEquals(LengthCompareOne, LengthCompareTwo);
             Assert.IsTrue(toReturn);
         }
@@ -84,183 +84,191 @@ namespace QuantityMeasurementTest
         [TestMethod]
         public void GivenTwoObjectWithDifferentvaleForLengthCompare_Whencheckedtype_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 0.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 0.7);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.INCH, 0.7);
             Assert.AreEqual(lengthOne.GetType(), lengthTwo.GetType());
         }
 
         [TestMethod]
         public void GivenZeroLengthCompareAndThreeLengthCompare_WhenCompareQuantity_ThenShouldReturnNotEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 0.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 0.3);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 0.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.INCH, 0.3);
             Assert.AreNotEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void GivenThreeLengthCompareAndThreeLengthCompare_WhenCompareQuantity_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 0.3);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 0.3);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 0.3);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.INCH, 0.3);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void GivenThreeFeetAndOneYard_WhenCompareQuantity_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 3.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 3.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.YARD, 1.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void GivenOneFeetAndOneYard_WhenCompareQuantity_ThenShouldReturnFalse()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.YARD, 1.0);
             Assert.IsFalse(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void GivenOneInchAndOneYard_WhenCompareQuantity_ThenShouldReturnFalse()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.YARD, 1.0);
             Assert.IsFalse(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void GivenOneYardAnd36Inch_WhenCompareQuantity_ThenShouldReturnTrue()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 36.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 36.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.YARD, 1.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void Given36InchAndOneYard_WhenCompareQuantity_ThenShouldReturnTrue()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 36.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 36.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.YARD, 1.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void GivenOneYardAndThreeFeet_WhenCompareQuantity_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 3.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.YARD, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 3.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.YARD, 1.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void GivenTwoInchAndFiveCentimeter_WhenCompareQuantity_ThenShouldReturnTrue()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 2.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.CENTIMETER, 5.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 2.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.CENTIMETER, 5.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
 
         [TestMethod]
         public void Given2InchAnd2Inch_WhenAdded_ThenshouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 2.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 2.0);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 4.0);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 2.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.INCH, 2.0);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.INCH, 4.0);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
 
         [TestMethod]
         public void Given2FeetAnd2Inch_WhenAdded_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 2.0);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 14.0);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.INCH, 2.0);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.INCH, 14.0);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
 
         [TestMethod]
         public void Given1FeetAnd1Feer_WhenAdded_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.FEET, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.FEET, 1.0);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 24.0);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FEET, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.FEET, 1.0);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.INCH, 24.0);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
 
         [TestMethod]
         public void Given2InchtAnd24Centimeter_WhenAdded_ThenShouldReturnEquals()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 2.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.CENTIMETER, 2.5);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 3.0);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.INCH, 2.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.CENTIMETER, 2.5);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.INCH, 3.0);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
 
         [TestMethod]
         public void Given1gallonAndLiter_WhenComparedQuantity_ThenShouldReturnEqual()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.LITRE, 3.78);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.GALLON, 1.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.LITRE, 3.78);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.GALLON, 1.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void Given1LitterAnd1000milliLiter_WhenComparedQuantity_ThenShouldReturnEqual()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.LITRE, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.MILILITRE, 1000.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.LITRE, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.MILILITRE, 1000.0);
             Assert.AreEqual(lengthTwo, lengthOne);
         }
 
         [TestMethod]
         public void Given1GallontAndLitter_WhenAdded_ThenShouldReturnEqualsWithvalue()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.GALLON, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.LITRE, 3.78);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.LITRE, 7.56);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.GALLON, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.LITRE, 3.78);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.LITRE, 7.56);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
 
         [TestMethod]
         public void Given1LitterAnd1000MilliLiter_WhenAdded_ThenShouldReturnEqualsWithvalue2Litter()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.LITRE, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.MILILITRE, 1000.0);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.LITRE, 2);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.LITRE, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.MILILITRE, 1000.0);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.LITRE, 2);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
         }
 
         [TestMethod]
         public void Given1KilogramAnd1000Gram_WhenCompared_ThenShouldReturnEqualsWithvalue()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.KILOGRAM, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.GRAM, 1000.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.KILOGRAM, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.GRAM, 1000.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void Given1TonneAnd1000Kilogram_WhenCompared_ThenShouldReturnEqualsWithvalue()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.TONNE, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.KILOGRAM, 1000.0);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.TONNE, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.KILOGRAM, 1000.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
 
         [TestMethod]
         public void Given1TonneAnd1000Gram_WhenAddition_ThenShouldReturnEqualsWithvalue10001Kilogram()
         {
-            LengthCompare lengthOne = new LengthCompare(UnitConverter.TONNE, 1.0);
-            LengthCompare lengthTwo = new LengthCompare(UnitConverter.GRAM, 1000.0);
-            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.KILOGRAM, 1001);
-            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.TONNE, 1.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.GRAM, 1000.0);
+            QuantityCompare ExpectedInInch = new QuantityCompare(UnitConverter.KILOGRAM, 1001);
+            QuantityCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
             Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
+
+        [TestMethod]
+        public void Given212FahrenheitAnd100Celsius_WhenCompared_ThenShouldReturnEquals()
+        {
+            QuantityCompare lengthOne = new QuantityCompare(UnitConverter.FAHRENHIET, 212.0);
+            QuantityCompare lengthTwo = new QuantityCompare(UnitConverter.CELCIUS, 100.0);
+            Assert.AreEqual(lengthOne, lengthTwo);
         }
     }
 }
