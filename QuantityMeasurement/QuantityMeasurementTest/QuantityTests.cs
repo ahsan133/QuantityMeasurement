@@ -40,11 +40,19 @@ namespace QuantityMeasurementTest
         }
 
         [TestMethod]
-        public void GivenZeroFeetAndThreeFeet_WhenCompareQuantity_ThenShouldReturnNotEquals()
+        public void GivenZeroFeetAndFiveFeet_WhenCompareQuantity_ThenShouldReturnNotEquals()
         {
             LengthCompare lengthOne = new LengthCompare(LengthCompare.Unit.FEET, 0.0);
             LengthCompare lengthTwo = new LengthCompare(LengthCompare.Unit.FEET, 5.0);
             Assert.AreNotEqual(lengthOne, lengthTwo);
+        }
+
+        [TestMethod]
+        public void GivenZeroLengthCompareAndZeroLengthCompare_WhenCompareQuantity_ThenShouldReturnEquals()
+        {
+            LengthCompare LengthOne = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
+            LengthCompare LengthCompareTwo = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
+            Assert.AreEqual(LengthOne, LengthCompareTwo);
         }
     }
 }
