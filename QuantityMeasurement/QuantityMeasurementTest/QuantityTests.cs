@@ -160,5 +160,15 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(UnitConverter.CENTIMETER, 5.0);
             Assert.IsTrue(lengthOne.Equals(lengthTwo));
         }
+
+        [TestMethod]
+        public void Given2InchAnd2Inch_ThenAddition_shouldReturnEquals()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.INCH, 2.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.INCH, 2.0);
+            LengthCompare ExpectedInInch = new LengthCompare(UnitConverter.INCH, 4.0);
+            LengthCompare additionOfTwoLength = lengthTwo.AddLength(lengthOne);
+            Assert.AreEqual(ExpectedInInch, additionOfTwoLength);
+        }
     }
 }
