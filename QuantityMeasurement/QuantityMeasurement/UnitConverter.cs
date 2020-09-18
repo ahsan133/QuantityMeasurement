@@ -13,6 +13,9 @@ namespace QuantityMeasurement
         public readonly static UnitConverter LITRE = new UnitConverter(1.0);
         public readonly static UnitConverter GALLON = new UnitConverter(3.78);
         public readonly static UnitConverter MILILITRE = new UnitConverter(0.001);
+        public static readonly UnitConverter KILOGRAM = new UnitConverter(1.0);
+        public static readonly UnitConverter GRAM = new UnitConverter(0.001);
+        public static readonly UnitConverter TONNE = new UnitConverter(1000);
 
         private double unitBaseConvertor;
 
