@@ -48,7 +48,7 @@ namespace QuantityMeasurementTest
         }
 
         [TestMethod]
-        public void GivenZeroLengthCompareAndZeroLengthCompare_WhenCompareQuantity_ThenShouldReturnEquals()
+        public void GivenZeroLengthCompareAndZeroLengthCompare_WhenComparedQuantity_ThenShouldReturnEquals()
         {
             LengthCompare LengthOne = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
             LengthCompare LengthCompareTwo = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
@@ -56,11 +56,20 @@ namespace QuantityMeasurementTest
         }
 
         [TestMethod]
-        public void GivenZeroLengthCompareAndNullLengthCompare_WhenCompareQuantity_ThenShouldReturnNotEquals()
+        public void GivenZeroLengthCompareAndNullLengthCompare_WhenComparedQuantity_ThenShouldReturnNotEquals()
         {
             LengthCompare LengthCompareOne = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
             LengthCompare LengthCompareTwo = null;
             Assert.AreNotEqual(LengthCompareOne, LengthCompareTwo);
+        }
+
+        [TestMethod]
+        public void GivenTwoObjectsForLengthCompare_WhenCheckedReference_ThenShouldReturnFalse()
+        {
+            LengthCompare LengthCompareOne = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
+            LengthCompare LengthCompareTwo = new LengthCompare(LengthCompare.Unit.INCH, 0.0);
+            bool toReturn = System.Object.ReferenceEquals(LengthCompareOne, LengthCompareTwo);
+            Assert.IsFalse(toReturn);
         }
     }
 }
