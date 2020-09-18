@@ -10,6 +10,9 @@ namespace QuantityMeasurement
         public readonly static UnitConverter INCH = new UnitConverter(1.0);
         public readonly static UnitConverter YARD = new UnitConverter(36.0);
         public readonly static UnitConverter CENTIMETER = new UnitConverter(0.4);
+        public readonly static UnitConverter LITRE = new UnitConverter(1.0);
+        public readonly static UnitConverter GALLON = new UnitConverter(3.78);
+        public readonly static UnitConverter MILILITRE = new UnitConverter(0.001);
 
         private double unitBaseConvertor;
 
