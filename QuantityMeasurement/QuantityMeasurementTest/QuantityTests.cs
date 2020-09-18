@@ -244,5 +244,13 @@ namespace QuantityMeasurementTest
             LengthCompare lengthTwo = new LengthCompare(UnitConverter.GRAM, 1000.0);
             Assert.AreEqual(lengthOne, lengthTwo);
         }
+
+        [TestMethod]
+        public void Given1TonneAnd1000Kilogram_WhenCompared_ThenShouldReturnEqualsWithvalue()
+        {
+            LengthCompare lengthOne = new LengthCompare(UnitConverter.TONNE, 1.0);
+            LengthCompare lengthTwo = new LengthCompare(UnitConverter.KILOGRAM, 1000.0);
+            Assert.AreEqual(lengthOne, lengthTwo);
+        }
     }
 }
